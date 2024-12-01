@@ -1,0 +1,521 @@
+/* ----------------start global rules-------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #fff3c3;
+    --main-transition: 0.7s;
+    --second-color: #ffae68;
+    --main-padding: 50px;
+    --padding-box: ;
+
+
+
+}
+
+body {
+    font-family: "Zilla Slab", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+/* -------components------- */
+.h2-title{
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+
+}
+.p-title{
+text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.a-style{
+    display: block;
+    width: fit-content;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+}
+
+/* -------components------- */
+
+/* ------media--------- */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* ------media--------- */
+/* ----------------end global rules-------------- */
+/* --------------------start header----------------- */
+header {
+    background-color: #fff3c3;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99999999;
+}
+
+header .container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+header .container nav:hover ul {
+    width: 100%
+}
+header .container nav:hover ul li a{
+    display: block;
+}
+
+header .container nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    width: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3em;
+    gap: 25px;
+    transition: var(--main-transition);
+}
+/* header .container nav ul::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-color: #000000 #00800000 #0000ff00 #00000000;
+    border-width: 10px 10px 10px 10px;
+    left: 42px;
+    top: -10px;
+    border-style: solid;
+} */
+
+header .container nav ul li a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+    display: none;
+}
+
+header .container nav ul li a:hover {
+    color: var(--second-color);
+}
+header .container nav{
+}
+/* header .container nav::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-color: black #00800000 #0000ff00 #00000000;
+    border-width: 10px 10px 10px 10px;
+    left: 1px;
+    bottom: -16px;
+    border-style: solid;
+
+} */
+header .container nav i {
+    font-size: 25px;
+    transition: var(--main-transition);
+}
+
+
+
+header .container h1 a {
+    color: black;
+    text-transform: uppercase;
+}
+
+header .container .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header .container .icons a i{
+    color: black;
+    font-size: 20px;
+}
+
+/* --------------------end header----------------- */
+/* ----------------------start landing--------------- */
+.landing{
+background-image: url("../images/banner-bg.png");
+background-size: cover;
+background-position: center;
+margin-top: 38px;
+height: calc(100vh - 38px);
+}
+.landing .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.landing .container .text{
+
+}
+.landing .container .text h2{
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 75px;
+    text-transform: capitalize;
+    line-height: 90px;
+}
+.landing .container .text p{
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+.landing .container .text a{
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-top: 30px;
+    display: block;
+    width: fit-content;
+    border-radius: 5px;
+    transition: var(--main-transition);
+}
+.landing .container .text a:hover{
+    background-color: var(--second-color);
+}
+.landing .container img{
+width: 50%
+}
+/*  ----------------------end landing--------------- */
+/* -------------------------start products--------------- */
+.products{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.products .boxs{
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+.products .boxs .box{
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px;
+    transition: var(--main-transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.products .boxs .box:hover{
+    transform: translatey(-10px);
+    box-shadow: 0px 0px 7px 0px black;
+}
+.products .boxs .box .bx{
+    padding: 10px;
+}
+.products .boxs .box img{
+
+}
+.products .boxs .box h3{
+    font-size: 22px;
+    text-transform: capitalize;
+}
+.products .boxs .box p{
+    margin: 5px 0;
+    font-size: 18px;
+}
+.products .boxs .box  .tx{
+    background-color: black;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    padding: var(--padding-box);
+
+}
+.products .boxs .box  .tx a{
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 20px;
+}
+.products .boxs .box  .tx a:first-of-type{
+    background-color: var(--second-color);
+}
+.products .boxs .box  .tx a:last-of-type{
+    background-color: #fff;
+    transition: var(--main-transition);
+    color:black;
+}
+.products .boxs .box  .tx a:last-of-type:hover{
+    background-color: var(--second-color);
+    color: white;
+}
+.products .see{
+    margin: 3em auto 0;
+}
+.products .see:hover{
+    background-color: var(--second-color);
+    color: black;
+}
+/* -------------------------end products--------------- */
+/* ----------------------------start about---------------- */
+.about{
+padding-top: var(--main-padding);
+padding-bottom: var(--main-padding);
+background-color: var(--main-color);
+}
+.about .container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.about h1{
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.about p{
+    line-height: 1.4;
+    font-size: 17px;
+}
+.about img{
+    width: 50%;
+}
+.about a{
+    margin-top: 10px;
+}
+.about a:hover{
+    background-color: var(--second-color);
+    color: black;
+}
+/* ----------------------------end about---------------- */
+/* -----------------start customers------------- */
+.customer{
+padding-top: var(--main-padding);
+padding-bottom: var(--main-padding);
+}
+.customer .box{
+    box-shadow: 0px 0px 15px -7px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 75%;
+    margin: 50px auto 0;
+    padding: 10px;
+}
+/* .customer .box .tx{
+
+} */
+.customer .box img{
+
+}
+.customer .box h3{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.customer .box p{
+    line-height: 1.4;
+    margin-top: 10px;
+}
+.customer .arrow{
+    width: fit-content;
+    margin: 30px auto 0;
+    display: flex;
+        gap: 5px;
+}
+.customer .arrow i{
+    box-shadow: 0px 0px 10px -3px black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: var(--main-transition);
+}
+.customer .arrow i:hover{
+    background-color: var(--second-color);
+}
+.customer .touch{
+    margin-top: 5em;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.customer .touch .tx1{
+    width: 55%;
+
+}
+.customer .touch h3{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.customer .touch p{
+    margin-top: 10px;
+    line-height: 1.4;
+}
+.customer .touch .links{
+    display: flex
+;
+    align-items: center;
+    gap: 10px;
+}
+.customer .touch .links a{
+    display: block;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    transition: var(--main-transition);
+}
+.customer .touch .links a:last-of-type{
+color: black;
+background-color: var(--main-color);
+}
+.customer .touch .links a:last-of-type:hover{
+    background-color: black;
+    color: var(--main-color)
+}
+/* -----------------end customers------------- */
+/* ----------------maps------------ */
+.maps iframe{
+    height: 20em;
+    width: 100%;
+}
+/* ----------------maps------------ */
+/* ------------------start footer---------------------- */
+footer{
+padding-top: var(--main-padding);
+padding-bottom: var(--main-padding);
+background-color: black;
+color: var(--main-color);
+}
+footer .end{
+    display: flex ;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+footer .end .one{
+    width: 30%;
+    text-align: left;
+}
+footer .end .h4-one{
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+footer .end .one:first-of-type ul{
+    display: flex
+;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+footer .end .one:first-of-type ul a{
+    color: white;
+}
+footer .end .one:first-of-type ul a i{
+    padding-right: 5px;
+}
+footer .end .one:nth-of-type(2){
+    text-align: center;
+}
+footer .end .one h2{
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+footer .end .one:nth-of-type(2) p{
+line-height:1.5;
+}
+footer .end .one:nth-of-type(2) .social{
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+footer .end .one:nth-of-type(2) .social a{
+    color: var(--main-color);
+    font-size: 20px;
+}
+footer .end .one:last-of-type p{
+    width: 50%;
+    line-height: 1.7;
+}
+footer .line{
+    width: 50%;
+    background-color: var(--main-color);
+    height: 3px;
+    margin: 3em auto;
+}
+footer .p-end{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+/* ------------------end footer---------------------- */
